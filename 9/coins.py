@@ -5,7 +5,6 @@ coins = cv2.imread('coins.png',1)
 
 gray = cv2.cvtColor(coins, cv2.COLOR_BGR2GRAY)
 
-# again, try different values here
 edged = cv2.Canny(gray, 600, 200)
 
 contours, _ = cv2.findContours(edged, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
@@ -21,7 +20,10 @@ for element in contours:
         cv2.drawContours(coins, element, -1, (0,0,255), 3)
         amountOfMoneyCalculated+=25
 
-cv2.imshow('coins',coins)        
+cv2.imshow('coins',coins)  
+
+cv2.imwrite( "coins2.png", coins);
+
 
 print(amountOfMoneyCalculated)
 

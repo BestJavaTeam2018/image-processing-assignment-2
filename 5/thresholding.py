@@ -10,4 +10,7 @@ erosion=cv2.erode(threshold,kernelDisk,iterations=2)
 
 cv2.imshow('Your amazing filtered Image', erosion)
 
+cv2.imwrite( "circle-erode.png", erosion );
+
+
 cv2.waitKey()

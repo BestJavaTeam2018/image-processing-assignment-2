@@ -11,6 +11,8 @@ dilation=cv2.dilate(img,kernelSq,iterations=1)
 
 
 cv2.imshow('Your amazing filtered Image', dilation)
+cv2.imwrite( "cameraman-denoised.png", dilation );
+
 
 
 cv2.waitKey()

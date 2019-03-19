@@ -16,6 +16,9 @@ circles=cv2.morphologyEx(img, cv2.MORPH_OPEN, kernelDisk)
 
 cv2.imshow('Your circles separated', circles)
 
+cv2.imwrite( "circle.png", circles );
+
+
 (contours, _) = cv2.findContours(circles.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
 #number of circles in the image
@@ -27,6 +30,9 @@ lines=img-circles
 lines=cv2.erode(lines,normalKernel,iterations=1)
 
 cv2.imshow('Your lines separated',lines)
+
+cv2.imwrite( "line.png", lines );
+
 
 (contours, _) = cv2.findContours(lines.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 

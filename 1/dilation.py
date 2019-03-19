@@ -10,11 +10,14 @@ kernelSq=cv2.getStructuringElement(cv2.MORPH_RECT,(11,11))
 kernelcircle=cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(11,11))
 
 
-dilation=cv2.dilate(img,kernelcircle,iterations=1)
-cv2.imshow('using circle structure', dilation)
+dilation1=cv2.dilate(img,kernelcircle,iterations=1)
+cv2.imshow('using circle structure', dilation1)
+cv2.imwrite( "square-circle-1.png", dilation1 );
 
-dilation=cv2.dilate(img,kernelSq,iterations=1)
-cv2.imshow('using square structure', dilation)
+
+dilation2=cv2.dilate(img,kernelSq,iterations=1)
+cv2.imshow('using square structure', dilation2)
+cv2.imwrite( "square-circle-2.png", dilation2 );
 
 
 

@@ -24,6 +24,9 @@ cv2.imshow('squareErosion', squareErosion)
 
 #the image took a slightly squared shape 
 
+cv2.imwrite( "circle-square-erode.png", squareErosion );
+
+
 
 
 cv2.waitKey()
