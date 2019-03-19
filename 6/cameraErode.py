@@ -4,11 +4,14 @@ import cv2
 
 import numpy as np
 
-img = cv2.imread('cameraman.png', 0)
+img = cv2.imread('cameraman.png', 1)
 
-kernel = np.ones((3, 3), np.uint8)
+#kernel = np.ones((5, 5), np.uint8)
 
-img2=cv2.erode(img,kernel,iterations=1)
+kernelSq=cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
+
+
+img2=cv2.erode(img,kernelSq,iterations=1)
 
 
 #img3=cv2.dilate(img2,kernel,iterations=1)
@@ -17,6 +20,6 @@ img2=cv2.erode(img,kernel,iterations=1)
 # will not be removed completely, but it will just be reduced
 
 
-cv2.imshow('Your amazing filtered Image', img2)
+cv2.imshow('SaltCleared', img2)
 
 cv2.waitKey()
