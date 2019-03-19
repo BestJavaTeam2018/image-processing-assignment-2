@@ -1,5 +1,7 @@
 import cv2
 
+import math
+
 import numpy as np
 
 img = cv2.imread('circle_and_lines.png', 0)
@@ -26,8 +28,10 @@ lines=cv2.erode(lines,normalKernel,iterations=1)
 
 cv2.imshow('Your lines separated',lines)
 
+(contours, _) = cv2.findContours(lines.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
+numberOfLines= math.ceil(len(contours)/2)
 
-
+print(numberOfLines)
 
 cv2.waitKey()
