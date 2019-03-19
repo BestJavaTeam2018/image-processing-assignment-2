@@ -1,3 +1,5 @@
+# pylint: disable=no-member
+
 import cv2
 
 img = cv2.imread('circle.png', 0)
