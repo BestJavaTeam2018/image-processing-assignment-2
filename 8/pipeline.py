@@ -2,7 +2,6 @@
 
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
 
 image = cv2.imread('morning.jpg',1)
 image2 = cv2.imread('evening.jpg',1)
@@ -26,5 +25,8 @@ mask = cv2.inRange(resized, lower_white, upper_white)
 res = cv2.bitwise_not(resized,resized, mask)
 
 cv2.imshow('res', res) 
+
+cv2.imwrite( "merged image.png", res );
+
 
 cv2.waitKey()

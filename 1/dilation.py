@@ -19,7 +19,4 @@ dilation2=cv2.dilate(img,kernelSq,iterations=1)
 cv2.imshow('using square structure', dilation2)
 cv2.imwrite( "square-circle-2.png", dilation2 );
 
-
-
-
 cv2.waitKey()
