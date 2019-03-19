@@ -4,11 +4,26 @@ import cv2
 import numpy as np
 
 img = cv2.imread('Square-circle.png', 0)
-kernel=np.zeros((10,10), np.uint8)
+
+kernelSq=cv2.getStructuringElement(cv2.MORPH_RECT,(11,11))
+
+kernelcircle=cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(11,11))
+
+#kernel=np.ones((11,11), np.uint8)
 
 
-dilation=cv2.dilate(img,kernel,iterations=1)
+dilation=cv2.dilate(img,kernelcircle,iterations=1)
 cv2.imshow('Your amazing filtered Image', dilation)
+
+#convex boundaries will become rounded,
+#and concave boundaries will be preserved as they are.
+
+
+dilation=cv2.dilate(img,kernelSq,iterations=1)
+cv2.imshow('Your amazing filtered Image2', dilation)
+
+#will dilate the bottom of a region more strongly than the top.
+
 
 
 cv2.waitKey()
